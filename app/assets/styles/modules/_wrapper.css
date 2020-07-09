@@ -1,4 +1,6 @@
 .wrapper {
+    background-color: green;
+    overflow: hidden;
     padding-left: 18px;
     padding-right: 18px;
     max-width: 1200px;
@@ -9,7 +11,7 @@
         max-width: 976px;
     }
     .wrapper {
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
