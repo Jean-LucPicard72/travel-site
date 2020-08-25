@@ -22,7 +22,7 @@ class RevealOnScroll {
     calcCaller() {
         console.log("Scroll function ran")
             this.itemsToReveal.forEach(el => {
-                if (el.isRevaeled == false) {
+                if (el.isRevealed == false) {
                     this.calculateIfScrolledTo(el)
                 }
             })
@@ -34,7 +34,7 @@ class RevealOnScroll {
             let scrollPercent = (el.getBoundingClientRect().y / this.browserHeight) * 100
             if (scrollPercent < this.thresholdPercent) {
             el.classList.add("reveal-item--is-visible")
-            el.isRevaeled = true
+            el.isRevealed = true
             if (el.isLastItem) {
                 window.removeEventListener("scroll", this.scrollThrottle)
             }
@@ -46,7 +46,7 @@ class RevealOnScroll {
     hideInitially() {
         this.itemsToReveal.forEach(el => {
             el.classList.add("reveal-item")
-            el.isRevaeled = false
+            el.isRevealed = false
         })
         this.itemsToReveal[this.itemsToReveal.length - 1].isLastItem = true
     }
