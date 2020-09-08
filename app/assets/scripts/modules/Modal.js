@@ -1,16 +1,24 @@
 class Modal {
     constructor() {
         this.injectHTML()
-        this.openModalButton = document.querySelectorAll(".open-modal")
+        this.modal = document.querySelector(".modal")
+        this.closeIcon = document.querySelector(".modal__close")
+        this.openModalButtons = document.querySelectorAll(".open-modal")
         this.events()
     }
 
     events() {
-        //listen for open click
+        // listen for open click
+        this.openModalButtons.forEach(el => el.addEventListener("click", e => this.openTheModal(e)))
+        // listen for close click
+        this.closeIcon.addEventListener("click", () => this.closeTheModal)
 
-        //listen for close click
+        // pushes any key
+    }
 
-        //pushes any key
+    openTheModal(e) {
+      e.preventDefault()
+      this.modal.classList.add("modal--is-visible")
     }
 
     injectHTML() {
@@ -30,7 +38,8 @@ class Modal {
           </div>
         </div>
         <div class="modal__close">X</div>
-      </div>`)
+      </div>
+      `)
     }
 }
 
