@@ -12,7 +12,9 @@ new RevealOnScroll(document.querySelectorAll(".testimonial"), 60);
 
 let mobileMenu = new MobileMenu();
 
+
 if(module.hot) {
   module.hot.accept();
 }
+
 
