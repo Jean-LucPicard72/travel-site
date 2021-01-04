@@ -5,7 +5,7 @@ class ClientArea {
     this.injectHTML()
     this.form = document.querySelector(".client-area__form")
     this.field = document.querySelector(".client-area__input")
-    this.contentArea = document.querySelector(".client-area__contentArea")
+    this.contentArea = document.querySelector(".client-area__content-area")
     this.events()
   }
 
@@ -21,7 +21,7 @@ class ClientArea {
       this.form.remove()
       this.contentArea.innerHTML = response.data      
     }).catch(() => {
-      this.contentArea.innerHTML = `<p class="client-area__error">That secret phrase in not correct. Try again</p>`
+      this.contentArea.innerHTML = `<p class="client-area__error">That secret phrase is not correct. Try again.</p>`
       this.field.value = ''
       this.field.focus()
     })
@@ -29,7 +29,7 @@ class ClientArea {
 
   injectHTML() {
     document.body.insertAdjacentHTML(
-      "beforeend",`
+      'beforeend', `
         <div class="client-area">
           <div class="wrapper wrapper--medium">
             <h2 class="section-title section-title--blue">Secret Client Area</h2>
@@ -41,8 +41,8 @@ class ClientArea {
           </div>
         </div>
       `
-    );
+    )
   }
 }
 
-export default ClientArea;
+export default ClientArea
